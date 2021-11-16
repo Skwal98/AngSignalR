@@ -6,12 +6,13 @@ import * as signalR from "@microsoft/signalr";
 })
 export class SignalRService {
 
-  private hubConnection: signalR.HubConnection
+  private hubConnection!: signalR.HubConnection
   public startConnection = () => {
     this.hubConnection = new signalR.HubConnectionBuilder()
       .withUrl('https://localhost:44361/chatHub', {
         skipNegotiation: true, //what?
-        transport: signalR.HttpTransportType.WebSockets
+        transport: signalR.HttpTransportType.WebSockets,
+        
         })
       .build();
 
