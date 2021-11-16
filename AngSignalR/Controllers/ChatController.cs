@@ -16,6 +16,7 @@ namespace AngSignalR.Controllers
         [HttpGet]
         public void Message()
         {
+            //_hub.Clients.User();
             _hub.Clients.All.SendAsync("message", "my message 1");
         }
     }
